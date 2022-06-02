@@ -96,9 +96,10 @@ class Animal {
 }
 
 class Dog extends Animal {
-  constructor(name, breed) {
+  constructor(name, breed, age) {
     super(name, 4);
     this.breed = breed;
+    this.age = age * 7;
   }
   sound() {
     console.log("Wooph.com");
@@ -119,6 +120,40 @@ class Fish extends Animal {
 
 const nemo = new Fish("Nemo");
 
+class Cat extends Animal {
+  constructor(name, color, gender, isFluffy) {
+    super(name, 4);
+    this.color = color;
+    this.livesLeft = livesLeft || 9;
+    this.rootOfAllThatIsEvil = true;
+    this.isFluffy = isFluffy;
+    this.gender = gender;
+  }
+}
+
+class Human extends Animal {
+  constructor(name, age, height, hasHumour) {
+    super(name, 2);
+    this.name = name;
+    this.age = age;
+    this.height = height;
+    this.hasHumour = hasHumour;
+  }
+
+  sound() {
+    console.log("Indeeeed");
+  }
+}
+
+class StudentPerson extends Human {
+  constructor(name, age, height, topic) {
+    super(name, age, height, true);
+    this.topic = topic;
+  }
+}
+
+const vincent = new StudentPerson("Vincent", 31, 169, "Web Dev");
+console.log("vincent:", vincent);
 // constructor is the function that gets called when we do new Whatever()
 // when we extend a class, we might, or might not need a constructor
 // if we dont change anything, we dont need
